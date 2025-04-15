@@ -14,10 +14,14 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    image:{
+    location : {
         type:String,
-        // required:true
+        required:true
     },
+    // image:{
+    //     type:String,
+    //     // required:true
+    // },
     rentedItems:[
         {
             type:mongoose.Schema.Types.ObjectId,

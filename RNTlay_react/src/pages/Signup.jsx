@@ -21,7 +21,8 @@ const Signup = () => {
   const userName = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-  const image = useRef(null);
+  const location = useRef(null);
+  // const image = useRef(null);
   const [errorMsg, setErrorMsg]=useState(null)
 
   
@@ -31,13 +32,14 @@ const Signup = () => {
    if(message) return;
   
 
-   console.log(image &&  image.current.files[0]);
+  //  console.log(image &&  image.current.files[0]);
    //signUp
    const response  = await axios.post("http://localhost:4000/api/v1/user/register", {
     name: userName && userName.current.value,
     email: email &&  email.current.value, 
     password: password && password.current.value,
-    image: image? image.current.files[0]: null,
+    location : location && location.current.value,
+    // image: image? image.current.files[0]: null,
     },{
       headers: {
         'Content-Type': 'multipart/form-data',
@@ -95,11 +97,17 @@ const Signup = () => {
       className='bg-zinc-300 w-full h-[40px] rounded-md mb-4 pl-2 border outline-none'
        type="password" placeholder='Enter Password'/>
 
-      <h2 className='mb-2 text-xl mr-[260px]'>Upload Image</h2>
+      <h2 className='mb-2 text-xl mr-[260px]'>Enter Location</h2>
+      <input 
+      ref={location}
+      className='bg-zinc-300 w-full h-[40px] rounded-md mb-4 pl-2 border outline-none'
+       type="text" placeholder='Enter Location'/>
+
+      {/* {<h2 className='mb-2 text-xl mr-[260px]'>Upload Image</h2>
       <input 
       ref={image}
       className='bg-zinc-300 w-full h-[42px] rounded-md mb-4 pl-2 border outline-none'
-       type="file" placeholder='Upload Image'/>
+       type="file" placeholder='Upload Image'/>} */}
 
        <p className='text-red-700 text-center' >{errorMsg}</p>
 

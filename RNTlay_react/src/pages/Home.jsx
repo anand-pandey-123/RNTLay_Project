@@ -34,7 +34,7 @@ const Home = () => {
         <option value="Furniture" className='border-none outline-none hover:bg-gray-500 text-black text-[20px] h-[30px] rounded-t-md'>Furniture</option>
         <option value="Clothes" className='border-none outline-none hover:bg-gray-500 text-black text-[20px] h-[30px] rounded-t-md'>Clothes</option>
         <option value="Books" className='border-none outline-none hover:bg-gray-500 text-black text-[20px] h-[30px] rounded-t-md'>Books</option>
-        <option value="Musical Instruments" className='border-none outline-none text-black hover:bg-gray-500 text-[20px] h-[30px] rounded-t-md'>Instrument</option>
+        <option value="Instrument" className='border-none outline-none text-black hover:bg-gray-500 text-[20px] h-[30px] rounded-t-md'>Instrument</option>
         <option value="Equipment" className='border-none outline-none hover:bg-gray-500 text-black text-[20px] h-[30px] rounded-t-md'>Equipment</option>
         <option value="Vehicles" className='border-none outline-none hover:bg-gray-500 text-[20px] text-black h-[30px] rounded-t-md'>Vehicles</option>
         <option value="Fashion" className='border-none outline-none hover:bg-gray-500 text-black text-[20px] h-[30px] rounded-t-md'>Fashion</option>

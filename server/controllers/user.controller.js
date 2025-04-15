@@ -7,17 +7,17 @@ dotenv.config();
 
 const registerUser = async (req, res) => {
     try {
-        const image = req.file.path; 
-        const { name, email, password } = req.body;
+        // const image = req.file.path; 
+        const { name, email, password, location } = req.body;
 
     // Validate user input
     if (!name || !email || !password) {
         return res.status(400).json({ message: 'Please fill all fields' });
     }
 
-    if (!image) {
-        return res.status(400).json({ message: 'Please upload an image' });
-    }
+    // if (!image) {
+    //     return res.status(400).json({ message: 'Please upload an image' });
+    // }
 
 
     // Check if user already exists
@@ -28,8 +28,8 @@ const registerUser = async (req, res) => {
 
     // Create new user
     const hashedPassword = await bcrypt.hash(password, 10);
-    const imageurl = await uploadOnCloudinary(image);
-    const newUser = await User.create({ name, email, password : hashedPassword, image: imageurl });
+    // const imageurl = await uploadOnCloudinary(image);
+    const newUser = await User.create({ name, email, password : hashedPassword, location });
     
     return res.status(201).json({ 
         success: true,

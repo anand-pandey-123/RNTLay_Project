@@ -26,7 +26,7 @@ const MyRentings = () => {
   return (
     <div>
             <Header></Header>
-            <h1 className='text-center text-2xl font-bold mt-10'>My Items</h1>
+            <h1 className='text-center text-2xl font-bold mt-10'>My Bookings</h1>
             <div className='flex flex-wrap w-[90%] justify-center m-auto mt-[5%]'>
                 {items && items.length > 0 ? (
                     items.map((item, index) => (
